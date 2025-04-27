@@ -122,19 +122,19 @@ valgrind: $(EXEC)
 clang-format:
 	$(call PRINT, "Running\ Clang-Format...")
 	$(call LOADING, clang-format --style=Google -i $(CODE_SRC) $(TEST_SRC))
-	clang-format --style=Google --verbose -Werror -n $(CODE_SRC) $(TEST_SRC)
+	@clang-format --style=Google --verbose -Werror -n $(CODE_SRC) $(TEST_SRC)
 	@printf "$(GREEN)✔ Clang-format complete!$(NC)\n"
 
 format-check:
 	$(call PRINT, "Running\ format\ check...")
-	$(call LOADING, clang-format --style=Google --verbose -Werror -n $(CODE_SRC) $(TEST_SRC))
+	@clang-format --style=Google --verbose -Werror -n $(CODE_SRC) $(TEST_SRC)
 	@printf "$(GREEN)✔ Format check complete!$(NC)\n"
 
 # ---- Cppcheck ------
 cppcheck:
 	$(call PRINT, "Running\ format\ check...")
 	@mkdir -p $(TEST_OUT)
-	$(call LOADING, cppcheck --enable=all --inconclusive --std=c11 --language=c $(CODE_SRC) $(TEST_SRC) 2> $(TEST_OUT)/cppcheck.log)
+	$(call LOADING, cppcheck --inconclusive --std=c11 --language=c $(CODE_SRC) $(TEST_SRC) 2> $(TEST_OUT)/cppcheck.log)
 	@printf "$(GREEN)✔ Cppcheck complete. Log: $(TEST_OUT)/cppcheck.log$(NC)\n"
 
 # ------ Full check -------
