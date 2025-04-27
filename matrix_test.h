@@ -7,5 +7,6 @@
 
 Suite *create_s21_create_matrix(void);
 Suite *create_s21_remove_matrix(void);
+Suite *create_s21_eq_matrix(void);
 
 #endif
