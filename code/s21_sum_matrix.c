@@ -1,7 +1,7 @@
 #include "../s21_matrix.h"
 
 int s21_sum_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
-  if (A->matrix == NULL || B->matrix == NULL) {
+  if (!A || !B || A->matrix == NULL || B->matrix == NULL) {
     return ONE;
   }
 
@@ -9,9 +9,7 @@ int s21_sum_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
     return TWO;
   }
 
-  if (s21_create_matrix(A->rows, A->cols, result) == ONE) {
-    return ONE;
-  }
+  s21_create_matrix(A->rows, A->cols, result);
 
   for (int i = 0; i < A->rows; i++) {
     for (int j = 0; j < A->cols; j++) {
