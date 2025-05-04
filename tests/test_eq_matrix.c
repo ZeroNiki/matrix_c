@@ -48,7 +48,13 @@ START_TEST(test_eq_diff_size) {
   matrix_t A, B;
   s21_create_matrix(2, 2, &A);
   s21_create_matrix(3, 2, &B);
+  ck_assert_int_eq(s21_eq_matrix(&A, &B), 0);
 
+  s21_remove_matrix(&A);
+  s21_remove_matrix(&B);
+
+  s21_create_matrix(3, 3, &A);
+  s21_create_matrix(3, 2, &B);
   ck_assert_int_eq(s21_eq_matrix(&A, &B), 0);
 
   s21_remove_matrix(&A);
@@ -77,14 +83,14 @@ END_TEST
 START_TEST(test_eq_null_internal_matrix) {
   matrix_t A, B;
   A.matrix = NULL;
-  A.rows = 2;
-  A.cols = 2;
 
-  B.matrix = NULL;
-  B.rows = 2;
-  B.cols = 2;
+  s21_create_matrix(1, 1, &B);
+  B.matrix[0][0] = 1;
 
   ck_assert_int_eq(s21_eq_matrix(&A, &B), 0);
+  ck_assert_int_eq(s21_eq_matrix(&B, &A), 0);
+  ck_assert_int_eq(s21_eq_matrix(&A, &A), 0);
+  s21_remove_matrix(&B);
 }
 END_TEST
 
