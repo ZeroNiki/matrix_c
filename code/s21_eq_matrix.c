@@ -1,11 +1,7 @@
 #include "../s21_matrix.h"
 
 int s21_eq_matrix(matrix_t *A, matrix_t *B) {
-  if (A == NULL || B == NULL) {
-    return FAILURE;
-  }
-
-  if (A->matrix == NULL || B->matrix == NULL) {
+  if (!A || !B || A->matrix == NULL || B->matrix == NULL) {
     return FAILURE;
   }
 
