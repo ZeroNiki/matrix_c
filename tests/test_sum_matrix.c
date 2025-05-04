@@ -86,7 +86,6 @@ START_TEST(test_sum_null_matrix) {
 }
 END_TEST
 
-
 Suite *create_s21_sum_matrix(void) {
   Suite *suite = suite_create("s21_sum_matrix");
 
