@@ -8,10 +8,10 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
   result->rows = rows;
   result->cols = columns;
 
-  result->matrix = (double **)calloc(rows, sizeof(int *));
+  result->matrix = malloc(rows * sizeof(double *));
 
   for (int i = 0; i < rows; i++) {
-    result->matrix[i] = (double *)calloc(columns, sizeof(int));
+    result->matrix[i] = calloc(columns, sizeof(double));
   }
 
   return ZERO;
