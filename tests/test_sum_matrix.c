@@ -19,6 +19,8 @@ START_TEST(test_sum_success) {
 
   ck_assert_int_eq(code, 0);
   ck_assert_double_eq(result.matrix[0][0], 5);
+  ck_assert_double_eq(result.matrix[0][1], 7);
+  ck_assert_double_eq(result.matrix[1][0], 9);
   ck_assert_double_eq(result.matrix[1][1], 11);
 
   s21_remove_matrix(&A);
