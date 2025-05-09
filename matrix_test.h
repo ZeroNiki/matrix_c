@@ -10,5 +10,6 @@ Suite *create_s21_remove_matrix(void);
 Suite *create_s21_eq_matrix(void);
 Suite *create_s21_sum_matrix(void);
 Suite *create_s21_sub_matrix(void);
+Suite *create_s21_mult_number(void);
 
 #endif
