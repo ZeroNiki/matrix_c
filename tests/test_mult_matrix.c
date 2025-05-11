@@ -52,7 +52,6 @@ START_TEST(test_null_ptr) {
   int code = s21_mult_matrix(NULL, NULL, NULL);
   ck_assert_int_eq(code, 1);
 
-
   code = s21_mult_matrix(&A, NULL, NULL);
   ck_assert_int_eq(code, 1);
 
