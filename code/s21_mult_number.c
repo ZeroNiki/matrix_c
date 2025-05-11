@@ -2,7 +2,7 @@
 
 int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
   if (A == NULL || result == NULL || A->matrix == NULL) {
-    return ONE;
+    return INCORRECT_MATRIX;
   }
 
   s21_create_matrix(A->rows, A->cols, result);
@@ -13,5 +13,5 @@ int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
     }
   }
 
-  return ZERO;
+  return OK;
 }

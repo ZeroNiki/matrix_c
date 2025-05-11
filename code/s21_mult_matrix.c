@@ -6,11 +6,11 @@
 
 int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   if (!A || !B || !result || !A->matrix || !B->matrix) {
-    return ONE;
+    return INCORRECT_MATRIX;
   }
 
   if (A->cols != B->rows) {
-    return TWO;
+    return CALC_ERROR;
   }
 
   s21_create_matrix(A->rows, B->cols, result);
@@ -24,5 +24,5 @@ int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
     }
   }
 
-  return ZERO;
+  return OK;
 }

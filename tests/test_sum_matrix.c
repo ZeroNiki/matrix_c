@@ -44,7 +44,7 @@ START_TEST(test_sum_diff_size) {
   s21_create_matrix(2, 3, &B);
 
   code = s21_sum_matrix(&A, &B, &result);
-  ck_assert_int_eq(code, TWO);
+  ck_assert_int_eq(code, 2);
 
   s21_remove_matrix(&A);
   s21_remove_matrix(&B);
@@ -54,14 +54,14 @@ END_TEST
 START_TEST(test_sum_null_ptr) {
   matrix_t matrix, result;
   int code = s21_sum_matrix(NULL, NULL, &result);
-  ck_assert_int_eq(code, ONE);
+  ck_assert_int_eq(code, 1);
 
   s21_create_matrix(3, 3, &matrix);
   code = s21_sum_matrix(&matrix, NULL, &result);
-  ck_assert_int_eq(code, ONE);
+  ck_assert_int_eq(code, 1);
 
   code = s21_sum_matrix(NULL, &matrix, &result);
-  ck_assert_int_eq(code, ONE);
+  ck_assert_int_eq(code, 1);
 
   s21_remove_matrix(&matrix);
 }
@@ -74,13 +74,13 @@ START_TEST(test_sum_null_matrix) {
   A.matrix = NULL;
 
   int code = s21_sum_matrix(&A, &B, &result);
-  ck_assert_int_eq(code, ONE);
+  ck_assert_int_eq(code, 1);
 
   code = s21_sum_matrix(&B, &A, &result);
-  ck_assert_int_eq(code, ONE);
+  ck_assert_int_eq(code, 1);
 
   code = s21_sum_matrix(&A, &A, &result);
-  ck_assert_int_eq(code, ONE);
+  ck_assert_int_eq(code, 1);
 
   s21_remove_matrix(&B);
 }

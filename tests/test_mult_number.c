@@ -16,7 +16,7 @@ START_TEST(success_mult_numbers) {
 
   int code = s21_mult_number(&A, 2, &result);
 
-  ck_assert_int_eq(code, ZERO);
+  ck_assert_int_eq(code, 0);
   ck_assert_double_eq(result.matrix[0][0], 2);
   ck_assert_double_eq(result.matrix[0][1], 4);
   ck_assert_double_eq(result.matrix[0][2], 6);

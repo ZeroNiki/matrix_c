@@ -2,7 +2,7 @@
 
 int s21_create_matrix(int rows, int columns, matrix_t *result) {
   if (rows <= 0 || columns <= 0) {
-    return ONE;
+    return INCORRECT_MATRIX;
   }
 
   result->rows = rows;
@@ -14,5 +14,5 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
     result->matrix[i] = calloc(columns, sizeof(double));
   }
 
-  return ZERO;
+  return OK;
 }

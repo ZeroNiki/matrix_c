@@ -6,11 +6,10 @@
 
 // Maximum permissible
 #define EPS 1e-7
-
 // Result code (sum, sub, mult, devide)
-#define ZERO 0 // OK
-#define ONE 1 // Error, incorrect matrix
-#define TWO 2 // Calculation error
+#define OK 0
+#define INCORRECT_MATRIX 1
+#define CALC_ERROR 2
 
 // Result code (eq_matrix)
 #define SUCCESS 1

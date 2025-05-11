@@ -2,11 +2,11 @@
 
 int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   if (!A || !B || A->matrix == NULL || B->matrix == NULL) {
-    return ONE;
+    return INCORRECT_MATRIX;
   }
 
   if (A->rows != B->rows || A->cols != B->cols) {
-    return TWO;
+    return CALC_ERROR;
   }
 
   s21_create_matrix(A->rows, A->cols, result);
@@ -17,5 +17,5 @@ int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
     }
   }
 
-  return ZERO;
+  return OK;
 }
