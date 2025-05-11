@@ -85,6 +85,8 @@ START_TEST(test_null_matrix) {
   // NULL
   code = s21_mult_matrix(&B, &A, &B);
   ck_assert_int_eq(code, 1);
+
+  s21_remove_matrix(&B);
 }
 END_TEST
 
